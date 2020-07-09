@@ -1,18 +1,30 @@
+.parent {
+    color: blue;
+    font-weight: 600;
+}
+
+span {
+    color: purple;
+}
+
 .cls {
-    background-color: aqua;
+    color: orange;
 }
 
 #first {
-    background-color: lightgray;
+    color: magenta;
 }
 
 /*
-  同じ タグに id と class でのstyleが当たったときは優先度に応じて当たるstyleが決まる。
-  id と class なら id が優先される
-  id > class > タグ
+   一番上から順番に詳細度が高い
+   <div class="parent">
+        <span id="first" class="cls">Hello Japan</span>  .... magenta が適用
+        <span>Hello Japan</span> ... purple が適用
+        <span>Hello Japan</span> ... purple が適用
+        <span>Hello Japan</span> ... purple が適用
+    </div>
  */
 
-
-#second {
-    border-bottom: black 1px solid;
+.parent span {
+    color: red;
 }
