@@ -5,7 +5,28 @@
     <title>Document</title>
 </head>
 <body>
-    <span>Hello World</span>
-    <img src="image-1.jpg" alt="">
+    <!-- インライン要素の代表 -->
+    <!-- インライン要素を中央揃えにするには ... 親要素に text-aligh:center を指定する 今回だと body -->
+    <span>Hello Inline</span>
+    <span>Hello Inline</span>
+    <!-- ブロック要素の代表 -->
+    <div>Hello Block</div>
+    <div>Hello Block</div>
+<style>
+    span {
+        /*display: block; */ /* インライン要素がブロック要素のように振る舞う */
+        width: 300px;
+        height: 400px;
+        background-color: lightyellow;
+    }
+    /* spanタグに対しての横幅と縦幅の指定は無視される */
+
+    div {
+        width: 300px;
+        height: 400px;
+        margin: 0 auto; /* ブロック要素を中央揃えにする */
+        background-color: cyan;
+    }
+</style>
 </body>
 </html>
