@@ -1,0 +1,18 @@
+.cls {
+    background-color: aqua;
+}
+
+#first {
+    background-color: lightgray;
+}
+
+/*
+  同じ タグに id と class でのstyleが当たったときは優先度に応じて当たるstyleが決まる。
+  id と class なら id が優先される
+  id > class > タグ
+ */
+
+
+#second {
+    border-bottom: black 1px solid;
+}
