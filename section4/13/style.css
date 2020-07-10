@@ -10,4 +10,11 @@
     margin: 50px 0;
     font-weight: 600; /* Default は 500 */
     cursor: pointer;
+
+    transition: color 1.0s, background-color 0.3s;
+}
+
+.btn:hover {
+    background-color: black;
+    color: white;
 }
