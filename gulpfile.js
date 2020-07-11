@@ -4,7 +4,7 @@ const autoprefixer = require('gulp-autoprefixer');
 
 // SassとCssの保存先を指定
 gulp.task('sass:compile', () => {
-    return gulp.src('./section/*.scss')
+    return gulp.src('./section/**/*.scss')
         .pipe(sass({outputStyle: 'expanded'}))
         .pipe(autoprefixer())
         .pipe(gulp.dest('section'));
@@ -12,7 +12,7 @@ gulp.task('sass:compile', () => {
 
 //自動監視のタスクを作成(sass-watchと名付ける)
 gulp.task('sass:watch', () => {
-    gulp.watch('./section/*.scss', gulp.task('sass:compile'));
+    gulp.watch('./section/**/*.scss', gulp.task('sass:compile'));
 });
 
 // タスク"task-watch"がgulpと入力しただけでdefaultで実行されるようになる
