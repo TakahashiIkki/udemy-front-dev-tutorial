@@ -1,38 +1,47 @@
-a {
-  color: orange;
+$cBlack: black;
 
-  &:visited {
-    color: blue;
-  }
 
-  &:hover {
-    color: red;
-  }
+.three-dot-spinner {
+  text-align: center;
 
-  &:focus {
-    color: green;
-  }
+  & div {
+    display: inline-block;
+    width: 18px;
+    height: 18px;
+    background: $cBlack;
+    border-radius: 50%;
+    animation: sk-bouncedelay 1.0s infinite;
 
-  &:active {
-    color: purple;
+    @for $i from 1 through 2 {
+      /* selectorで使用する場合は #{} として使う */
+      &:nth-child(#{$i}) {
+        animation-delay: -0.32s / $i;
+      }
+    }
+    &:nth-child(1) {
+      animation-delay: -0.32s;
+    }
+
+    &:nth-child(2) {
+      animation-delay: -0.16s;
+    }
   }
 }
 
-
-div {
-  & span {
-    color: olive;
+@keyframes sk-bouncedelay {
+  0% {
+    transform: scale(0);
   }
 
-  & span:nth-child(3) {
-    color: purple;
+  40% {
+    transform: scale(1);
   }
 
-  & span:nth-child(2n) {
-    color: green;
+  80% {
+    transform: scale(0);
   }
 
-  & span:nth-child(odd) {
-    color: red;
+  100% {
+    transform: scale(0);
   }
 }
