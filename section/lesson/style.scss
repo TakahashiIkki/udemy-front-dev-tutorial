@@ -1,41 +1,41 @@
 $cBlack: black;
 
-
-.three-dot-spinner {
+body {
   text-align: center;
+}
 
-  & div {
-    display: inline-block;
-    width: 18px;
-    height: 18px;
-    background: $cBlack;
-    border-radius: 50%;
-    animation: sk-bouncedelay 1.0s infinite;
-  }
+@mixin animation(
+  $name,
+  $duration: 1s,
+) {
+  animation: {
+    name: $name;
+    duration: $duration;
+  };
+}
 
-  & .bounce1 {
-    animation-delay: -0.32s;
-  }
+.rect {
+  display: inline-block;
+  width: 100px;
+  height: 100px;
+  background-color: $cBlack;
+  @include animation(
+          $name: sk-bouncedelay
+  );
+}
 
-  & .bounce2 {
-    animation-delay: -0.16s;
-  }
+.paused {
+  animation-play-state: paused;
 }
 
 @keyframes sk-bouncedelay {
-  0% {
+  from {
     transform: scale(0);
+    background-color: $cBlack;
   }
 
-  40% {
+  to {
     transform: scale(1);
-  }
-
-  80% {
-    transform: scale(0);
-  }
-
-  100% {
-    transform: scale(0);
+    background-color: green;
   }
 }
