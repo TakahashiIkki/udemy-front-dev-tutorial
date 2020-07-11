@@ -1,41 +1,35 @@
-body {
-  text-align: center;
+a {
+  color: orange;
 }
 
-.rect {
-  display: inline-block;
-  width: 100px;
-  height: 100px;
-  background-color: black;
-  -webkit-animation-name: sk-bouncedelay;
-          animation-name: sk-bouncedelay;
-  -webkit-animation-duration: 1s;
-          animation-duration: 1s;
+a:visited {
+  color: blue;
 }
 
-.paused {
-  -webkit-animation-play-state: paused;
-          animation-play-state: paused;
+a:hover {
+  color: red;
 }
 
-@-webkit-keyframes sk-bouncedelay {
-  from {
-    transform: scale(0);
-    background-color: black;
-  }
-  to {
-    transform: scale(1);
-    background-color: green;
-  }
+a:focus {
+  color: green;
 }
 
-@keyframes sk-bouncedelay {
-  from {
-    transform: scale(0);
-    background-color: black;
-  }
-  to {
-    transform: scale(1);
-    background-color: green;
-  }
+a:active {
+  color: purple;
+}
+
+div span {
+  color: olive;
+}
+
+div span:nth-child(3) {
+  color: purple;
+}
+
+div span:nth-child(2n) {
+  color: green;
+}
+
+div span:nth-child(odd) {
+  color: red;
 }

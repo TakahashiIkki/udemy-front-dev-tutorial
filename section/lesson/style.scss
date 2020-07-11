@@ -1,41 +1,38 @@
-$cBlack: black;
+a {
+  color: orange;
 
-body {
-  text-align: center;
-}
-
-@mixin animation(
-  $name,
-  $duration: 1s,
-) {
-  animation: {
-    name: $name;
-    duration: $duration;
-  };
-}
-
-.rect {
-  display: inline-block;
-  width: 100px;
-  height: 100px;
-  background-color: $cBlack;
-  @include animation(
-          $name: sk-bouncedelay
-  );
-}
-
-.paused {
-  animation-play-state: paused;
-}
-
-@keyframes sk-bouncedelay {
-  from {
-    transform: scale(0);
-    background-color: $cBlack;
+  &:visited {
+    color: blue;
   }
 
-  to {
-    transform: scale(1);
-    background-color: green;
+  &:hover {
+    color: red;
+  }
+
+  &:focus {
+    color: green;
+  }
+
+  &:active {
+    color: purple;
+  }
+}
+
+
+div {
+  & span {
+    color: olive;
+  }
+
+  & span:nth-child(3) {
+    color: purple;
+  }
+
+  & span:nth-child(2n) {
+    color: green;
+  }
+
+  & span:nth-child(odd) {
+    color: red;
   }
 }
