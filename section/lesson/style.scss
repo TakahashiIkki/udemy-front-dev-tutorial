@@ -13,7 +13,6 @@ $cBlack: black;
     animation: sk-bouncedelay 1.0s infinite;
 
     @for $i from 1 through 2 {
-      /* selectorで使用する場合は #{} として使う */
       &:nth-child(#{$i}) {
         animation-delay: -0.32s / $i;
       }
