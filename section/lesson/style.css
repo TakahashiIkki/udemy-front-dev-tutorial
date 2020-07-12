@@ -1,116 +1,61 @@
-@charset "UTF-8";
-html {
-  font-family: 'Teko', sans-serif;
+.appear.up .item {
+  transform: translateY(6px);
 }
 
-body {
-  margin: 0;
+.appear.down .item {
+  transform: translateY(-6px);
 }
 
-#container {
-  position: relative;
-  height: 100vh;
-  /* 開いてるブラウザの高さいっぱいいっぱい */
-  background-color: teal;
+.appear.left .item {
+  transform: translateX(40px);
 }
 
-.animate-title {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  color: white;
+.appear.right .item {
+  transform: translateX(-40px);
+}
+
+.appear .item {
+  transition: all 0.8s;
   opacity: 0;
-  font-size: 2em;
-  /* デフォルトの大きさの2倍 */
 }
 
-.animate-title.inview {
+.appear.inview .item {
   opacity: 1;
+  transform: none;
 }
 
-.animate-title.inview .char {
-  display: inline-block;
-  /* & .char の場合は子要素 */
-  -webkit-animation-name: kf-animate-chars;
-          animation-name: kf-animate-chars;
-  -webkit-animation-duration: 0.5s;
-          animation-duration: 0.5s;
-  -webkit-animation-timing-function: cubic-bezier(0.39, 1.57, 0.58, 1);
-          animation-timing-function: cubic-bezier(0.39, 1.57, 0.58, 1);
-  -webkit-animation-delay: 0s;
-          animation-delay: 0s;
-  -webkit-animation-iteration-count: 1;
-          animation-iteration-count: 1;
-  -webkit-animation-direction: normal;
-          animation-direction: normal;
-  -webkit-animation-fill-mode: both;
-          animation-fill-mode: both;
+.appear.inview .item:nth-child(1) {
+  transition-delay: 0.1s;
 }
 
-.animate-title.inview .char:nth-child(1) {
-  -webkit-animation-delay: 0.04s;
-          animation-delay: 0.04s;
+.appear.inview .item:nth-child(2) {
+  transition-delay: 0.2s;
 }
 
-.animate-title.inview .char:nth-child(2) {
-  -webkit-animation-delay: 0.08s;
-          animation-delay: 0.08s;
+.appear.inview .item:nth-child(3) {
+  transition-delay: 0.3s;
 }
 
-.animate-title.inview .char:nth-child(3) {
-  -webkit-animation-delay: 0.12s;
-          animation-delay: 0.12s;
+.appear.inview .item:nth-child(4) {
+  transition-delay: 0.4s;
 }
 
-.animate-title.inview .char:nth-child(4) {
-  -webkit-animation-delay: 0.16s;
-          animation-delay: 0.16s;
+.appear.inview .item:nth-child(5) {
+  transition-delay: 0.5s;
 }
 
-.animate-title.inview .char:nth-child(5) {
-  -webkit-animation-delay: 0.2s;
-          animation-delay: 0.2s;
+.appear.inview .item:nth-child(6) {
+  transition-delay: 0.6s;
 }
 
-.animate-title.inview .char:nth-child(6) {
-  -webkit-animation-delay: 0.24s;
-          animation-delay: 0.24s;
+.appear.inview .item:nth-child(7) {
+  transition-delay: 0.7s;
 }
 
-.animate-title.inview .char:nth-child(7) {
-  -webkit-animation-delay: 0.28s;
-          animation-delay: 0.28s;
+.appear.inview .item:nth-child(8) {
+  transition-delay: 0.8s;
 }
 
-.animate-title.inview .char:nth-child(8) {
-  -webkit-animation-delay: 0.32s;
-          animation-delay: 0.32s;
-}
-
-.animate-title.inview .char:nth-child(9) {
-  -webkit-animation-delay: 0.36s;
-          animation-delay: 0.36s;
-}
-
-@-webkit-keyframes kf-animate-chars {
-  0% {
-    opacity: 0;
-    transform: translateY(-50%);
-  }
-  100% {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-@keyframes kf-animate-chars {
-  0% {
-    opacity: 0;
-    transform: translateY(-50%);
-  }
-  100% {
-    opacity: 1;
-    transform: translateY(0);
-  }
+img {
+  max-width: 80%;
 }
