@@ -8,18 +8,22 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-<button onclick="document.querySelector('.appear').classList.toggle('inview');">
-    appear
-</button>
-<div class="appear right">
-    <div class="item"><img src="../images/image-1.jpg"></div>
-    <div class="item"><img src="../images/image-1.jpg"></div>
-    <div class="item"><img src="../images/image-1.jpg"></div>
-    <div class="item"><img src="../images/image-1.jpg"></div>
-    <div class="item"><img src="../images/image-1.jpg"></div>
-    <div class="item"><img src="../images/image-1.jpg"></div>
-    <div class="item"><img src="../images/image-1.jpg"></div>
-    <div class="item"><img src="../images/image-1.jpg"></div>
-</div>
+<img src="../images/400x250.png">
+<div class="bg-img"></div>
+<picture>
+    <source media="(min-width:960px)" srcset="../images/1100x550.png">
+    <source media="(min-width:480px)" srcset="../images/800x250.png">
+    <img src="../images/400x250.png">
+</picture>
+<style>
+    .bg-img {
+        height: 250px;
+        background-image: url(../images/400x250.png);
+        background-repeat: no-repeat; /* defaultがリピート */
+        background-size: cover; /* アスペクト比を保って調整してくれる */
+        /* imgタグに object-fit: cover; とすると同じように出来る */
+        background-position: center;
+    }
+</style>
 </body>
 </html>
