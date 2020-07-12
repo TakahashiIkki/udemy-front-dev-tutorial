@@ -1,13 +1,17 @@
-// const dcl = document.querySelector('.dcl');
-// const load = document.querySelector('.load');
-//
-// document.addEventListener("DOMContentLoaded", function () {
-//     dcl.classList.add('done');
-// });
-//
-// window.addEventListener("load", function () {
-//     load.classList.add('done');
-// });
+document.addEventListener("DOMContentLoaded", function () {
+    const el = document.querySelector('.animate-title');
+    const str = el.innerHTML.trim().split("");
 
-const h1 = document.querySelector('h1');
-h1.style.color = 'red';
+    el.innerHTML = str.reduce((acc, curr) => {
+        curr = curr.replace(/\s+/, '&nbsp');
+        return `${acc}<span class="char">${curr}</span>`;
+    }, "");
+
+    // let concatStr = '';
+    //
+    // for (let c of str) {
+    //     c = c.replace(/\s+/, '&nbsp');
+    //     concatStr +=  `<span class="char">${c}</span>`;
+    // }
+    // el.innerHTML = concatStr;
+});
